@@ -1,7 +1,7 @@
 #include <iostream>
 int main()
 {
-	cout << "pananoastra23";
+	cout << "nu mai vorbeste urat";
 
 return 0;
 }
