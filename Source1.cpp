@@ -1,5 +1,7 @@
 #include <iostream>
 int main()
 {
-	cout << "panamea";
+	cout << "pananoastra";
+
+return 0;
 }
