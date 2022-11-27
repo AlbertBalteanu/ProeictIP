@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1669558566 source:c:\users\balte\source\repos\proeictip\proeictip-socilucian- balteanualbert\main.cpp
+	<iostream>
+	<winbgim.h>
+	<graphics.h>
+	<math.h>
+	<conio.h>
+
