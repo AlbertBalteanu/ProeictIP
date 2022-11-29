@@ -16,9 +16,10 @@ int main()
      initwindow(600,600);
 
      drawpoly(7,casa);
+     delay(1000);
 
      while(trapez[8]!=casa[8]){ // while -> subprogram (cord img1, cord img 2)
-        delay(600);
+        delay(500);
         clearviewport();
         casa[8]=casa[8]-30; //diferenta calculata in notepad -> algoritm de calcul
         casa[10]=casa[10]+28;
