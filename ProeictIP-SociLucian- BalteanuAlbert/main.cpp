@@ -54,13 +54,13 @@ void deseneazaMeniul()
             break;
 
         }
-        rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+      //  rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
         bar(B[i].D.SS.x, B[i].D.SS.y+100, B[i].D.DJ.x, B[i].D.SS.y);
         setbkcolor(BLACK);
-        outtextxy(B[i].D.SS.x+25,B[i].D.SS.y+10,B[i].text);
+        outtextxy(B[i].D.SS.x+40,B[i].D.SS.y+40,B[i].text);
     }
 
-    outtextxy(300, 50, "MORPHING");
+    outtextxy(364, 100, "MORPHING");
 }
 
 int butonAles()
