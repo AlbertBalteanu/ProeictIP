@@ -4,8 +4,11 @@
 #include <math.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <fstream>
 
 using namespace std;
+ifstream fin ("input.txt");
+ofstream afisecuatii ("afisecuatii.out");
 
 struct punct
 {
@@ -54,13 +57,13 @@ void deseneazaMeniul()
             break;
 
         }
-        rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
-        bar(B[i].D.SS.x, B[i].D.SS.y+100, B[i].D.DJ.x, B[i].D.SS.y);
+      //  rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+        bar3d(B[i].D.SS.x, B[i].D.SS.y+100, B[i].D.DJ.x, B[i].D.SS.y,5,0);
         setbkcolor(BLACK);
-        outtextxy(B[i].D.SS.x+25,B[i].D.SS.y+10,B[i].text);
+        outtextxy(B[i].D.SS.x+40,B[i].D.SS.y+40,B[i].text);
     }
 
-    outtextxy(300, 50, "MORPHING");
+    outtextxy(364, 100, "MORPHING");
 }
 
 int butonAles()
@@ -79,17 +82,37 @@ int butonAles()
     return 0;
 }
 
-int trapez[] = {190,256, 384,258, 288,256, 190,256, 70,419, 500,419, 385,256};
-int casa[] = {190,256, 384,258, 288,116, 190,256, 190,419, 385,419, 385,256};
-
-void drawpoly( int number, int *polypoints );
+//int trapez[] = {190,256, 384,258, 288,256, 190,256, 70,419, 500,419, 385,256};
+//int casa[] = {190,256, 384,258, 288,116, 190,256, 190,419, 385,419, 385,256};
+int trapez[15],casa[15];
+struct ecautii
+{
+    float panta;
+    float terlib; ///"termenul liber"
+}ec[8];
+//void drawpoly( int number, int *polypoints );
+void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib)
+{
+    panta=(y1-y2)/(x1-x2);
+   // afisecuatii<<panta;
+    terlib=y1-(panta*x1);
+   // afisecuatii<<"y="<<panta<<"x+"<<terlib;
+}
 
 int main()
 {
+    for(int i=0;i<14;i++)
+        fin>>trapez[i];
+    for(int i=0;i<14;i++)
+        fin>>casa[i];
     initwindow(800,600);
     deseneazaMeniul();
 
-    int comanda, butonul_apasat;
+   // for(int i=0;i<8;i++);
+   int i=0;
+       // calculeazaEcuatia(trapez[i*2],trapez[i*2+1],casa[i*2],casa[i*2+1],ec[i].panta,ec[i].terlib);
+
+    int comanda=0, butonul_apasat=0;
     do
     {
         butonul_apasat=butonAles();
@@ -112,13 +135,14 @@ int main()
                         casa[5]=casa[5]+35;
                         drawpoly(7,casa);
                     }
+
                     getch();
                     closegraph();
                 }
             }
     }
     while (comanda!=2);
-    // getch();
+    getch();
     closegraph();
     return 0;
 }
