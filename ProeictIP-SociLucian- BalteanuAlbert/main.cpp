@@ -4,8 +4,11 @@
 #include <math.h>
 #include <conio.h>
 #include <stdlib.h>
+#include <fstream>
 
 using namespace std;
+ifstream fin ("input.txt");
+ofstream afisecuatii ("afisecuatii.out");
 
 struct punct
 {
@@ -79,15 +82,35 @@ int butonAles()
     return 0;
 }
 
-int trapez[] = {190,256, 384,258, 288,256, 190,256, 70,419, 500,419, 385,256};
-int casa[] = {190,256, 384,258, 288,116, 190,256, 190,419, 385,419, 385,256};
-
-void drawpoly( int number, int *polypoints );
+//int trapez[] = {190,256, 384,258, 288,256, 190,256, 70,419, 500,419, 385,256};
+//int casa[] = {190,256, 384,258, 288,116, 190,256, 190,419, 385,419, 385,256};
+int trapez[15],casa[15];
+struct ecautii
+{
+    float panta;
+    float terlib; ///"termenul iber"
+}ec[8];
+//void drawpoly( int number, int *polypoints );
+void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib)
+{
+    panta=(y1-y2)/(x1-x2);
+    afisecuatii<<panta;
+    terlib=y1-(panta*x1);
+    afisecuatii<<"y="<<panta<<"x+"<<terlib;
+}
 
 int main()
 {
+    for(int i=0;i<14;i++)
+        fin>>trapez[i];
+    for(int i=0;i<14;i++)
+        fin>>casa[i];
     initwindow(800,600);
     deseneazaMeniul();
+
+   // for(int i=0;i<8;i++);
+   int i=0;
+       //     calculeazaEcuatia(trapez[i*2],trapez[i*2+1],casa[i*2],casa[i*2+1],ec[i].panta,ec[i].terlib);
 
     int comanda, butonul_apasat;
     do
@@ -112,6 +135,8 @@ int main()
                         casa[5]=casa[5]+35;
                         drawpoly(7,casa);
                     }
+
+
                     getch();
                     closegraph();
                 }
