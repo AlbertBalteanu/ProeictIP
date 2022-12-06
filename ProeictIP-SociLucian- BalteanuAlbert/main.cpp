@@ -93,10 +93,10 @@ struct ecautii
 //void drawpoly( int number, int *polypoints );
 void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib)
 {
-    panta=(y1-y2)/(x1-x2);
+    panta=(y1-y2)/(x1-x2);// impartire la 0
    // afisecuatii<<panta;
     terlib=y1-(panta*x1);
-   // afisecuatii<<"y="<<panta<<"x+"<<terlib;
+    afisecuatii<<"y="<<panta<<"x+"<<terlib;
 }
 
 int main()
@@ -110,7 +110,7 @@ int main()
 
    // for(int i=0;i<8;i++);
    int i=0;
-       // calculeazaEcuatia(trapez[i*2],trapez[i*2+1],casa[i*2],casa[i*2+1],ec[i].panta,ec[i].terlib);
+        calculeazaEcuatia(trapez[i*2],trapez[i*2+1],casa[i*2],casa[i*2+1],ec[i].panta,ec[i].terlib);
 
     int comanda=0, butonul_apasat=0;
     do
