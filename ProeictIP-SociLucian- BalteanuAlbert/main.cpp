@@ -157,9 +157,9 @@ int main()
             laFel[i]=lafel;
         }
 
-        distante[i]=float(trapez[2*i]-casa[2*i])/22;
+        distante[i]=float(trapez[2*i]-casa[2*i])/100;
         if(laFel[i]==2)
-            distante[i]=float(trapez[2*i+1]-casa[2*i+1])/22;
+            distante[i]=float(trapez[2*i+1]-casa[2*i+1])/100;
         if(distante[i]<0)distante[i]*=-1;
         cout<<distante[i]<<' ';
 
@@ -198,7 +198,7 @@ int main()
                      drawpoly(7,casa);
                  } */
                  ///MERGE!!!!! bag pl in el algoritm e ora 3 dimineata nb
-                for(int i=1; i<=22; i++)
+                for(int i=1; i<=100; i++)
                 {
                     clearviewport();
                     for(int j=0; j<7; j++)
@@ -231,7 +231,7 @@ int main()
                     for(int k=0;k<15;k++)
                         casaint[k]=casa[k];
                     drawpoly(7,casaint);
-                    delay(10);
+                    delay(1);
                 }
                 clearviewport();
                 drawpoly(7,trapezint);
