@@ -33,37 +33,61 @@ struct buton
     char text[20];
 };
 
-buton B[6];
-int nrButoane=2;
+buton B[12];
+int nrButoane=11;
+
 void deseneazaMeniul()
 {
 
     setcolor(WHITE);
-    setfillstyle(SOLID_FILL,LIGHTCYAN);
-    int i;
-    for (i=1; i<=nrButoane; i++)
-    {
-        B[i].D.SS.x=150*i;
-        B[i].D.DJ.x=150*(i+1)-10;
-        B[i].D.SS.y=150;
-        B[i].D.DJ.y=250;
-        switch(i)
-        {
-        case 1:
-            strcpy(B[i].text,"Exemplu 1");
-            break;
-        case 2:
-            strcpy(B[i].text,"Iesire");
-            break;
+    setfillstyle(SOLID_FILL,LIGHTGREEN);
 
-        }
-        //  rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
-        bar3d(B[i].D.SS.x, B[i].D.SS.y+100, B[i].D.DJ.x, B[i].D.SS.y,5,0);
+    line (0,80 , 1400,80); //linia orizontala
+    line (700,80, 700,700); // linia verticala
+
+    int i=1;
+
+    B[i].D.SS.x=40;
+    B[i].D.SS.y=150;
+
+    B[i].D.DJ.x=180;
+    B[i].D.DJ.y=200;
+
+    strcpy(B[i].text,"Alege imaginea 1");
+    bar(B[i].D.SS.x, B[i].D.SS.y, B[i].D.DJ.x, B[i].D.DJ.y);
+
+        outtextxy(B[i].D.SS.x+10,B[i].D.SS.y+15,B[i].text);
+    setcolor(GREEN);
+    rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+
+     for (i=2; i<=4; i++)
+    {
+        setcolor(WHITE);
+
+        B[i].D.SS.x=B[i-1].D.SS.x + 160;
+        B[i].D.SS.y=150;
+
+        B[i].D.DJ.x=B[i-1].D.DJ.x + 160;
+        B[i].D.DJ.y=200;
+
+        if(i==2)strcpy(B[i].text,"Alege imaginea 2");
+            else if (i==3)strcpy(B[i].text,"START");
+                else if (i==4) strcpy(B[i].text,"Iesire");
+
+        bar(B[i].D.SS.x, B[i].D.SS.y, B[i].D.DJ.x, B[i].D.DJ.y);
         setbkcolor(BLACK);
-        outtextxy(B[i].D.SS.x+40,B[i].D.SS.y+40,B[i].text);
+            outtextxy(B[i].D.SS.x+10,B[i].D.SS.y+15,B[i].text);
+        setcolor(GREEN);
+        rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
     }
 
-    outtextxy(364, 100, "MORPHING");
+    setcolor(WHITE);
+
+    settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
+    outtextxy(564, 25, "MORPHING");
+
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 1);
+
 }
 
 int butonAles()
@@ -86,13 +110,16 @@ int butonAles()
 //int casa[] = {190,256, 384,256, 288,116, 190,256, 190,419, 385,419, 385,256};
 float trapez[15],casa[15];
 int trapezint[15],casaint[15];
+
 struct ecuatii
 {
     float panta;
     float terlib; ///"termenul liber"
     int coefy;
 } ec[8];
+
 //void drawpoly( int number, int *polypoints );
+
 void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib, int &coefy, int &lafel)
 {
     if(x1==x2&&y1==y2)
@@ -125,6 +152,24 @@ void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terli
 float distante[8];
 int laFel[8]; ///1=punctul nu se misca 2=pe verticala 3=pe orizontala 4=avem ecuatie cu toti coeficientii
 int stdr[8];///-1 daca merge in st sau jos, "1" daca merge sus sau dreapta
+
+void deseneazaimg1(){
+    int i=5;
+    B[5].D.SS.x=125;
+    B[5].D.SS.y=250;
+
+    B[5].D.DJ.x=225;
+    B[5].D.DJ.y=350;
+
+
+    setcolor(WHITE);
+    rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+
+
+}
+
+
+
 int main()
 {
     for(int i=0; i<14; i++)
@@ -138,7 +183,7 @@ int main()
         casaint[i]=casa[i];
         }
 
-    initwindow(800,600);
+    initwindow(1400,700);
     deseneazaMeniul();
 
     for(int i=0; i<7; i++) ///for ul asta imi calculeaza mie o gramada de chestii n ai trb cu el
@@ -172,6 +217,8 @@ int main()
 
     }
 
+    /// ----------------------------------------------------------------------
+
     int comanda=0, butonul_apasat=0;
     do
     {
@@ -181,9 +228,13 @@ int main()
             comanda=butonul_apasat;
             cout<<"Comanda "<<comanda<<endl;
 
-            if(butonul_apasat==1)
+            if(butonul_apasat==1){
+                deseneazaimg1();
+            }
+
+            if(butonul_apasat==3)
             {
-                initwindow(600,600);
+                setviewport(700,80, 700,1400, 0);
 
                 drawpoly(7,casaint);
                 delay(700);
@@ -198,9 +249,11 @@ int main()
                      drawpoly(7,casa);
                  } */
                  ///MERGE!!!!! bag pl in el algoritm e ora 3 dimineata nb
+
                 for(int i=1; i<=100; i++)
                 {
-                    clearviewport();
+                    setfillstyle(SOLID_FILL,BLACK);
+                    bar(2,2,698,698);
                     for(int j=0; j<7; j++)
                     {
                         if(stdr[j]!=1)
@@ -235,13 +288,11 @@ int main()
                 }
                 clearviewport();
                 drawpoly(7,trapezint);
-                getch();
-                closegraph();
             }
         }
     }
-    while (comanda!=2);
-    getch();
+    while (comanda!=4);
+    //getch();
     closegraph();
     return 0;
 }
