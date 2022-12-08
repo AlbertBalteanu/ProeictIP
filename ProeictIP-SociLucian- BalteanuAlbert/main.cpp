@@ -84,7 +84,8 @@ int butonAles()
 
 //int trapez[] = {190,256, 384,256, 288,256, 190,256, 70,419, 500,419, 385,256};
 //int casa[] = {190,256, 384,256, 288,116, 190,256, 190,419, 385,419, 385,256};
-int trapez[15],casa[15];
+float trapez[15],casa[15];
+int trapezint[15],casaint[15];
 struct ecuatii
 {
     float panta;
@@ -123,13 +124,20 @@ void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terli
 }
 float distante[8];
 int laFel[8]; ///1=punctul nu se misca 2=pe verticala 3=pe orizontala 4=avem ecuatie cu toti coeficientii
-int stdr[8];///-1 daca merge in st sau jos, 1 daca merge sus sau dreapta
+int stdr[8];///-1 daca merge in st sau jos, "1" daca merge sus sau dreapta
 int main()
 {
     for(int i=0; i<14; i++)
+        {
         fin>>trapez[i];
+        trapezint[i]=trapez[i];
+        }
     for(int i=0; i<14; i++)
+        {
         fin>>casa[i];
+        casaint[i]=casa[i];
+        }
+
     initwindow(800,600);
     deseneazaMeniul();
 
@@ -149,9 +157,9 @@ int main()
             laFel[i]=lafel;
         }
 
-        distante[i]=float(trapez[2*i]-casa[2*i])/100;
+        distante[i]=float(trapez[2*i]-casa[2*i])/22;
         if(laFel[i]==2)
-            distante[i]=float(trapez[2*i+1]-casa[2*i+1])/100;
+            distante[i]=float(trapez[2*i+1]-casa[2*i+1])/22;
         if(distante[i]<0)distante[i]*=-1;
         cout<<distante[i]<<' ';
 
@@ -177,8 +185,8 @@ int main()
             {
                 initwindow(600,600);
 
-                drawpoly(7,casa);
-                delay(1000);
+                drawpoly(7,casaint);
+                delay(700);
 
                 /* while(trapez[8]!=casa[8])  // while -> subprogram (cord img1, cord img 2)
                  {
@@ -189,8 +197,8 @@ int main()
                      casa[5]=casa[5]+35;
                      drawpoly(7,casa);
                  } */
-                 ///BA INCA NU MERGE PERFECT DA SUNT PE DRUMUL CEL BUN, mai trebuie reglate niste formule
-                for(int i=1; i<=200; i++)
+                 ///MERGE!!!!! bag pl in el algoritm e ora 3 dimineata nb
+                for(int i=1; i<=22; i++)
                 {
                     clearviewport();
                     for(int j=0; j<7; j++)
@@ -198,32 +206,35 @@ int main()
                         if(stdr[j]!=1)
                         {
                             if(laFel[j]==2)
-                                casa[j*2+1]=casa[j*2+1]+(int)((float)distante[j]);
+                                casa[j*2+1]=casa[j*2+1]+distante[j];
                             if(laFel[j]==3)
-                                casa[j*2]=casa[j*2]+(int)((float)distante[j]);
+                                casa[j*2]=casa[j*2]+distante[j];
                             if(laFel[j]==4)
                             {
-                                casa[j*2]=casa[j*2]+(int)((float)distante[j]);
+                                casa[j*2]=casa[j*2]+distante[j];
                                 casa[j*2+1]=casa[j*2]*ec[j].panta+ec[j].terlib;
                             }
                         }
                         else
                         {
                             if(laFel[j]==2)
-                                casa[j*2+1]=casa[j*2+1]-(int)((float)distante[j]);
+                                casa[j*2+1]=casa[j*2+1]-distante[j];
                             if(laFel[j]==3)
-                                casa[j*2]=casa[j*2]-(int)((float)distante[j]);
+                                casa[j*2]=casa[j*2]-distante[j];
                             if(laFel[j]==4)
                             {
-                                casa[j*2]=casa[j*2]-(int)((float)distante[j]);
+                                casa[j*2]=casa[j*2]-distante[j];
                                 casa[j*2+1]=casa[j*2]*ec[j].panta+ec[j].terlib;
                             }
                         }
                     }
-                    drawpoly(7,casa);
+                    for(int k=0;k<15;k++)
+                        casaint[k]=casa[k];
+                    drawpoly(7,casaint);
                     delay(10);
                 }
-
+                clearviewport();
+                drawpoly(7,trapezint);
                 getch();
                 closegraph();
             }
@@ -237,6 +248,7 @@ int main()
 /*
 Albert:
 ce mai am de facut:
+trebuie sa bag tot algoritmul de morphing intr o functie
 sa folosesc structura punct in loc de inlantuirea vectorului, totusi nu cred pot pt ca drawpoly foloseste vector ca sa construiasca linia
 sa fie imaginile formate din mai multe linii poligonale
 sa se poata morfa din oricare imagine in oricare alta imagine din cele 3 (asata trebuie vazut si cu partea de frontend)
