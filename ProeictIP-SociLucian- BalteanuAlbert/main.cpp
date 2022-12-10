@@ -293,13 +293,15 @@ int main()
                 culoareoriginala(1);
             }
 
-            if(butonul_apasat==3) /// ALG TREBUIE INLOCUIT CU UN VOID START(IMG1, IMG2) !!! PLUS ATENTIE LA CAZUL IN CARE NU AU FOST ALESE IMG INCA (PREV1 SAU PREV2 = 0)
+            if(butonul_apasat==3 && lockbut==0) /// ALG TREBUIE INLOCUIT CU UN VOID START(IMG1, IMG2) !!! PLUS ATENTIE LA CAZUL IN CARE NU AU FOST ALESE IMG INCA (PREV1 SAU PREV2 = 0)
             {   culoareoriginala(1);
                 culoareoriginala(2);
 
                 setviewport(700,80, 700,1400, 0);
                 setcolor(WHITE);
                 lockbut=1;
+
+                //start(img1,img2)}
 
                 drawpoly(7,casaint);
                 delay(700);
@@ -319,6 +321,7 @@ int main()
                 {
                     setfillstyle(SOLID_FILL,BLACK);
                     bar(2,2,698,698);
+
                     for(int j=0; j<7; j++)
                     {
                         if(stdr[j]!=1)
