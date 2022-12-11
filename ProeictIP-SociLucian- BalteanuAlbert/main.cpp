@@ -145,14 +145,6 @@ int butonAles()
 float img[8][50];
 int imgint[8][50];
 
-/*struct ecuatii
-{
-    float panta;
-    float terlib; ///"termenul liber"
-    int coefy;
-} ec[24];
-*/
-
 void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib, int &coefy, int &lafel)
 {
     if(x1==x2&&y1==y2)
@@ -244,7 +236,7 @@ void morph(float a[],float b[],int aint[], int bint[],int n)
 
     float aux[2*n]= {0};
     int auxint[2*n]= {0};
-    for(int i=1; i<n; i++)
+    for(int i=0; i<2*n; i++)
         aux[i]=a[i];
     drawpoly(n,aint);
     delay(700);
@@ -268,29 +260,30 @@ void morph(float a[],float b[],int aint[], int bint[],int n)
                 else
                     aux[j*2+1]=aux[j*2+1]-distante[j];
             }
-            if(laFel[i]==4)
+            if(laFel[j]==4)
             {
-                if(stdr[i]>0)
+                if(stdr[j]>0)
                 {
                     aux[j*2]=aux[j*2]+distante[j];
-                    aux[j*2+1]=-(ec[i].panta*aux[j*2]+ec[i].terlib);
+                    aux[j*2+1]=-(ec[j].panta*aux[j*2]+ec[j].terlib);
                 }
                 else
                 {
                     aux[j*2]=aux[j*2]-distante[j];
-                    aux[j*2+1]=-(ec[i].panta*aux[j*2]+ec[i].terlib);
+                    aux[j*2+1]=-(ec[j].panta*aux[j*2]+ec[j].terlib);
                 }
             }
         }
         for(int k=0; k<2*n; k++)
             auxint[k]=(int)aux[k];
-      //  bar(2,2,698,698);
+        bar(2,2,698,698);
         drawpoly(n,auxint);
-        delay(30);
+        delay(10);
 
 
     }
-   // drawpoly(n,bint);
+    bar(2,2,698,698);
+    drawpoly(n,bint);
 }
 void culoareoriginala(int c)  // folosit pt aducere butoanele 1 si 2 la normal
 {
