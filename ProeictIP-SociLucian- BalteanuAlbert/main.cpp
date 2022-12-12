@@ -121,6 +121,13 @@ void deseneazaMeniul()
 
     } // creeaza restul butoanelor imagini
 
+    readimagefile("poza2.gif",B[6].D.SS.x+1, B[6].D.SS.y+1,B[6].D.DJ.x-1,B[6].D.DJ.y-1);
+    readimagefile("poza3.gif",B[7].D.SS.x+1, B[7].D.SS.y+1,B[7].D.DJ.x-1,B[7].D.DJ.y-1);
+    readimagefile("poza4.gif",B[8].D.SS.x+1, B[8].D.SS.y+1,B[8].D.DJ.x-1,B[8].D.DJ.y-1);
+    readimagefile("poza5.gif",B[9].D.SS.x+1, B[9].D.SS.y+1,B[9].D.DJ.x-1,B[9].D.DJ.y-1);
+    readimagefile("poza6.gif",B[10].D.SS.x+1, B[10].D.SS.y+1,B[10].D.DJ.x-1,B[10].D.DJ.y-1);
+    readimagefile("poza7.gif",B[11].D.SS.x+1, B[11].D.SS.y+1,B[11].D.DJ.x-1,B[11].D.DJ.y-1);
+    readimagefile("poza8.gif",B[12].D.SS.x+1, B[12].D.SS.y+1,B[12].D.DJ.x-1,B[12].D.DJ.y-1);
 
     settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
     outtextxy(564, 25, "MORPHING");
@@ -361,7 +368,7 @@ int main()
                 culoareoriginala(1);
             }
 
-            if(butonul_apasat==3 && lockbut==0) /// ALG TREBUIE INLOCUIT CU UN VOID START(IMG1, IMG2) !!! PLUS ATENTIE LA CAZUL IN CARE NU AU FOST ALESE IMG INCA (PREV1 SAU PREV2 = 0)
+            if(butonul_apasat==3 && lockbut==0 && (prev1!=0 && prev2!=0)) /// ALG TREBUIE INLOCUIT CU UN VOID START(IMG1, IMG2) !!! PLUS ATENTIE LA CAZUL IN CARE NU AU FOST ALESE IMG INCA (PREV1 SAU PREV2 = 0)
             {
                 culoareoriginala(1);
                 culoareoriginala(2);
