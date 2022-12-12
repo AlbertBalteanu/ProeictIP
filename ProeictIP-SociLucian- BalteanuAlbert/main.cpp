@@ -94,6 +94,9 @@ void deseneazaMeniul()
 
     rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);//creeaza primul patrat/buton imagine ca referinta
 
+    readimagefile("poza1.jpeg",B[i].D.SS.x+1, B[i].D.SS.y+1,B[i].D.DJ.x-1,B[i].D.DJ.y-1); /// POZAA
+
+
     for(i=6; i<=nrButoane; i++)
     {
         if(i==9) // schimbarea de nivel dupa 4 butoane imagine
