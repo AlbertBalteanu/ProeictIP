@@ -1,11 +1,7 @@
 # depslib dependency file v1.0
-1670869402 source:c:\users\balte\source\repos\proeictip\proeictip-socilucian- balteanualbert\main.cpp
+1671117270 source:c:\users\balte\source\repos\proeictip\proeictip-socilucian- balteanualbert\main.cpp
 	<iostream>
-	<winbgim.h>
 	<graphics.h>
-	<math.h>
-	<conio.h>
-	<stdlib.h>
 	<fstream>
 
 1671116326 source:d:\proeictip\proeictip-socilucian- balteanualbert\main.cpp
