@@ -1,9 +1,9 @@
 #include <iostream>
-#include <winbgim.h>
+//#include <winbgim.h>
 #include <graphics.h>
-#include <math.h>
-#include <conio.h>
-#include <stdlib.h>
+//#include <math.h>
+//#include <conio.h>
+//#include <stdlib.h>
 #include <fstream>
 
 using namespace std;
@@ -38,13 +38,15 @@ int nrButoane=12;
 
 void deseneazaMeniul()
 {
-    settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 1);
     setcolor(WHITE);
-    setfillstyle(SOLID_FILL,LIGHTGREEN);
+
+    settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
+    outtextxy(564, 25, "MORPHING");
+
+    settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 1);
 
     line (0,80, 1400,80);  //linia orizontala
-    line (700,80, 700,700); // linia verticala
-    line (0,250, 700,250);
+    //line (700,80, 700,700); // linia vertica
 
     int i=1;
 
@@ -54,11 +56,12 @@ void deseneazaMeniul()
     B[i].D.DJ.x=180;
     B[i].D.DJ.y=200;
 
-    strcpy(B[i].text,"Alege imaginea 1");
-    bar(B[i].D.SS.x, B[i].D.SS.y, B[i].D.DJ.x, B[i].D.DJ.y);
-    outtextxy(B[i].D.SS.x+10,B[i].D.SS.y+15,B[i].text);
-    setcolor(GREEN);
-    rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+    //strcpy(B[i].text,"Alege imaginea 1");
+    //bar(B[i].D.SS.x, B[i].D.SS.y, B[i].D.DJ.x, B[i].D.DJ.y);
+    //outtextxy(B[i].D.SS.x+10,B[i].D.SS.y+15,B[i].text);
+    //setcolor(GREEN);
+    //rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+    readimagefile("alege1.gif",40, 150, 180, 200);
 
     for (i=2; i<=4; i++)
     {
@@ -129,10 +132,6 @@ void deseneazaMeniul()
     readimagefile("poza7.gif",B[11].D.SS.x+1, B[11].D.SS.y+1,B[11].D.DJ.x-1,B[11].D.DJ.y-1);
     readimagefile("poza8.gif",B[12].D.SS.x+1, B[12].D.SS.y+1,B[12].D.DJ.x-1,B[12].D.DJ.y-1);
 
-    settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
-    outtextxy(564, 25, "MORPHING");
-
-    settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 1);
 
 }
 
