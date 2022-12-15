@@ -32,108 +32,8 @@ struct buton
     int culoare;
     char text[20];
 };
-
-buton B[15];
-int nrButoane=12;
-
-void deseneazaMeniul()
-{
-    setcolor(WHITE);
-
-    settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
-    outtextxy(564, 25, "MORPHING");
-
-    settextstyle(SANS_SERIF_FONT, HORIZ_DIR, 1);
-
-    line (0,80, 1400,80);  //linia orizontala
-    //line (700,80, 700,700); // linia vertica
-
-    int i=1;
-
-    B[i].D.SS.x=40;
-    B[i].D.SS.y=150;
-
-    B[i].D.DJ.x=180;
-    B[i].D.DJ.y=200;
-
-    //strcpy(B[i].text,"Alege imaginea 1");
-    //bar(B[i].D.SS.x, B[i].D.SS.y, B[i].D.DJ.x, B[i].D.DJ.y);
-    //outtextxy(B[i].D.SS.x+10,B[i].D.SS.y+15,B[i].text);
-    //setcolor(GREEN);
-    //rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
-    readimagefile("alege1.gif",40, 150, 180, 200);
-
-    for (i=2; i<=4; i++)
-    {
-        setcolor(WHITE);
-
-        B[i].D.SS.x=B[i-1].D.SS.x + 160;
-        B[i].D.SS.y=150;
-
-        B[i].D.DJ.x=B[i-1].D.DJ.x + 160;
-        B[i].D.DJ.y=200;
-
-        if(i==2)strcpy(B[i].text,"Alege imaginea 2");
-        else if (i==3)strcpy(B[i].text,"START");
-        else if (i==4) strcpy(B[i].text,"Iesire");
-
-        bar(B[i].D.SS.x, B[i].D.SS.y, B[i].D.DJ.x, B[i].D.DJ.y);
-        setbkcolor(BLACK);
-        outtextxy(B[i].D.SS.x+10,B[i].D.SS.y+15,B[i].text);
-        setcolor(GREEN);
-        rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
-    }
-
-    setcolor(WHITE);
-
-    i=5; //primul buton imagine
-    int nivel=300;
-
-    B[i].D.SS.x=13;
-    B[i].D.SS.y=nivel;
-
-    B[i].D.DJ.x=13+150;
-    B[i].D.DJ.y=nivel+150; //150 este latura patratului
-
-    rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);//creeaza primul patrat/buton imagine ca referinta
-
-    readimagefile("poza1.gif",B[i].D.SS.x+1, B[i].D.SS.y+1,B[i].D.DJ.x-1,B[i].D.DJ.y-1); /// POZAA
-
-
-    for(i=6; i<=nrButoane; i++)
-    {
-        if(i==9) // schimbarea de nivel dupa 4 butoane imagine
-        {
-            nivel=500;
-            B[i].D.SS.x=13;
-            B[i].D.SS.y=nivel;
-
-            B[i].D.DJ.x=13+150;
-            B[i].D.DJ.y=nivel+150;
-        }
-        else
-        {
-            B[i].D.SS.x=B[i-1].D.SS.x + 175 ;
-            B[i].D.SS.y=nivel;
-
-            B[i].D.DJ.x=B[i-1].D.DJ.x + 175;
-            B[i].D.DJ.y=nivel+150;
-        }
-
-        rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
-
-    } // creeaza restul butoanelor imagini
-
-    readimagefile("poza2.gif",B[6].D.SS.x+1, B[6].D.SS.y+1,B[6].D.DJ.x-1,B[6].D.DJ.y-1);
-    readimagefile("poza3.gif",B[7].D.SS.x+1, B[7].D.SS.y+1,B[7].D.DJ.x-1,B[7].D.DJ.y-1);
-    readimagefile("poza4.gif",B[8].D.SS.x+1, B[8].D.SS.y+1,B[8].D.DJ.x-1,B[8].D.DJ.y-1);
-    readimagefile("poza5.gif",B[9].D.SS.x+1, B[9].D.SS.y+1,B[9].D.DJ.x-1,B[9].D.DJ.y-1);
-    readimagefile("poza6.gif",B[10].D.SS.x+1, B[10].D.SS.y+1,B[10].D.DJ.x-1,B[10].D.DJ.y-1);
-    readimagefile("poza7.gif",B[11].D.SS.x+1, B[11].D.SS.y+1,B[11].D.DJ.x-1,B[11].D.DJ.y-1);
-    readimagefile("poza8.gif",B[12].D.SS.x+1, B[12].D.SS.y+1,B[12].D.DJ.x-1,B[12].D.DJ.y-1);
-
-
-}
+buton B[20];
+int nrButoane=15;
 
 int butonAles()
 {
@@ -149,6 +49,145 @@ int butonAles()
                 return i;
     }
     return 0;
+}
+
+
+void deseneazaMeniul()
+{
+    readimagefile("bkr.gif",0, 0,1400,700);
+    setcolor(WHITE);
+
+    settextstyle(TRIPLEX_FONT, HORIZ_DIR, 4);
+    outtextxy(564, 25, "MORPHING");
+
+    line (0,80, 1400,80);  //linia orizontala
+
+    int i=1;
+    int nivel=200;
+
+    B[i].D.SS.x=125;
+    B[i].D.SS.y=nivel;
+
+    B[i].D.DJ.x=425;
+    B[i].D.DJ.y=nivel+70;
+
+    for (i=2; i<=6; i++)
+    {
+        setcolor(WHITE);
+        if(i==4) // schimbarea de nivel dupa 3 butoane
+        {
+            nivel=320;
+            B[i].D.SS.x=125;
+            B[i].D.SS.y=nivel;
+
+            B[i].D.DJ.x=425;
+            B[i].D.DJ.y=nivel+70;
+        }
+        else
+        {
+            B[i].D.SS.x=B[i-1].D.SS.x + 425;
+            B[i].D.SS.y=nivel;
+
+            B[i].D.DJ.x=B[i-1].D.DJ.x + 425;
+            B[i].D.DJ.y=nivel+70;
+        }
+    }
+
+    readimagefile("alege1.gif",B[1].D.SS.x, B[1].D.SS.y,B[1].D.DJ.x,B[1].D.DJ.y);
+    readimagefile("alege2.gif",B[2].D.SS.x, B[2].D.SS.y,B[2].D.DJ.x,B[2].D.DJ.y);
+    readimagefile("start.gif",B[3].D.SS.x, B[3].D.SS.y,B[3].D.DJ.x,B[3].D.DJ.y);
+    readimagefile("deseneaza1.gif",B[4].D.SS.x, B[4].D.SS.y,B[4].D.DJ.x,B[4].D.DJ.y);
+    readimagefile("deseneaza2.gif",B[5].D.SS.x, B[5].D.SS.y,B[5].D.DJ.x,B[5].D.DJ.y);
+    readimagefile("iesire.gif",B[6].D.SS.x, B[6].D.SS.y,B[6].D.DJ.x,B[6].D.DJ.y);
+
+    setcolor(WHITE);
+
+}
+
+void deseneazaBack(){
+    B[7].D.SS.x=2;
+    B[7].D.SS.y=2;
+
+    B[7].D.DJ.x=202;
+    B[7].D.DJ.y=62;
+    readimagefile("inapoi.gif",B[7].D.SS.x, B[7].D.SS.y,B[7].D.DJ.x,B[7].D.DJ.y);
+}
+
+void blocimg(){
+    int j;
+    for(j=8;j<=15;j++){
+    B[j].D.SS.x=0;
+    B[j].D.SS.y=0;
+
+    B[j].D.DJ.x=0;
+    B[j].D.DJ.y=0;
+    }
+}
+
+void blocbut(){
+    int j;
+    for(j=1;j<=6;j++){
+    B[j].D.SS.x=0;
+    B[j].D.SS.y=0;
+
+    B[j].D.DJ.x=0;
+    B[j].D.DJ.y=0;
+    }
+}//butoanele din meniu puteau fi apasate din meniul cu poze si invers
+
+void deseneazaPoze(){
+    blocbut();
+    initwindow(1400,700);
+    readimagefile("bkr.gif",0, 0,1400,700);
+    setcolor(WHITE);
+    deseneazaBack();
+
+    int i=8; //primul buton imagine
+    int niv=75;
+
+    B[i].D.SS.x=75;
+    B[i].D.SS.y=niv;
+
+    B[i].D.DJ.x=75+250;
+    B[i].D.DJ.y=niv+250; //300 este latura patratului
+
+    rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);//creeaza primul patrat/buton imagine ca referinta
+
+    readimagefile("poza1.gif",B[i].D.SS.x+1, B[i].D.SS.y+1,B[i].D.DJ.x-1,B[i].D.DJ.y-1); /// POZAA
+
+
+    for(i=9; i<=nrButoane; i++)
+    {
+        if(i==12) // schimbarea de nivel dupa 4 butoane imagine
+        {
+            niv=375;
+            B[i].D.SS.x=75;
+            B[i].D.SS.y=niv;
+
+            B[i].D.DJ.x=75+250;
+            B[i].D.DJ.y=niv+250;
+        }
+        else
+        {
+            B[i].D.SS.x=B[i-1].D.SS.x + 333 ;
+            B[i].D.SS.y=niv;
+
+            B[i].D.DJ.x=B[i-1].D.DJ.x + 333;
+            B[i].D.DJ.y=niv+250;
+        }
+
+        rectangle(B[i].D.SS.x, B[i].D.SS.y,B[i].D.DJ.x,B[i].D.DJ.y);
+
+    } // creeaza restul butoanelor imagini
+
+    readimagefile("poza2.gif",B[9].D.SS.x+1, B[9].D.SS.y+1,B[9].D.DJ.x-1,B[9].D.DJ.y-1);
+    readimagefile("poza3.gif",B[10].D.SS.x+1, B[10].D.SS.y+1,B[10].D.DJ.x-1,B[10].D.DJ.y-1);
+    readimagefile("poza4.gif",B[11].D.SS.x+1, B[11].D.SS.y+1,B[11].D.DJ.x-1,B[11].D.DJ.y-1);
+    readimagefile("poza5.gif",B[12].D.SS.x+1, B[12].D.SS.y+1,B[12].D.DJ.x-1,B[12].D.DJ.y-1);
+    readimagefile("poza6.gif",B[13].D.SS.x+1, B[13].D.SS.y+1,B[13].D.DJ.x-1,B[13].D.DJ.y-1);
+    readimagefile("poza7.gif",B[14].D.SS.x+1, B[14].D.SS.y+1,B[14].D.DJ.x-1,B[14].D.DJ.y-1);
+    readimagefile("poza8.gif",B[15].D.SS.x+1, B[15].D.SS.y+1,B[15].D.DJ.x-1,B[15].D.DJ.y-1);
+
 }
 
 float img[8][50];
@@ -194,6 +233,8 @@ void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terli
     }
 }
 
+int prev1=0;
+int prev2=0;
 
 void morph(float a[],float b[],int aint[], int bint[],int n)
 {
@@ -292,42 +333,31 @@ void morph(float a[],float b[],int aint[], int bint[],int n)
 
     }
     bar(2,2,698,698);
-    drawpoly(n,bint);
-}
-void culoareoriginala(int c)  // folosit pt aducere butoanele 1 si 2 la normal
-{
-    setfillstyle(SOLID_FILL,LIGHTGREEN);
-    bar(B[c].D.SS.x, B[c].D.SS.y, B[c].D.DJ.x, B[c].D.DJ.y);
-    setcolor(WHITE);
-    setbkcolor(BLACK);
-    outtextxy(B[c].D.SS.x+10,B[c].D.SS.y+15,B[c].text);
-    setcolor(GREEN);
-    rectangle(B[c].D.SS.x, B[c].D.SS.y,B[c].D.DJ.x,B[c].D.DJ.y);
-    setcolor(WHITE);
+    //drawpoly(n,bint); -> asa era inainte sa ma bag eu (in loc de if else )
+    if(prev2!=15)drawpoly(n,bint); //  cand e nike face cu un pas mai putin gen
+       else drawpoly(n,auxint);
 }
 
-
-int main()
+int main() /// --------------------------------------------------------------------------------------
 {
     int enableimg1=0;//pt alegerea img1 dupa selectarea butonului 1
     int enableimg2=0;//pt alegerea img2 dupa selectarea butonului 2
 
     initwindow(1400,700);
     deseneazaMeniul();
+
     for(int i=1; i<=8; i++)
         for(int j=0; j<50; j++)
         {
             fin>>img[i][j];
             imgint[i][j]=img[i][j];
+            //if(i==8)cout<<imgint[i][j]<<" ";
         }
 
     /// ----------------------------------------------------------------------
 
     int comanda=0, butonul_apasat=0;
-    int prev1=0;
-    int prev2=0;
     int imag=0; // folosit doar ca prescurtare pt butonul_apasat in cazu 1 si 2
-    int lockbut=0;
 
     do
     {
@@ -337,54 +367,50 @@ int main()
             comanda=butonul_apasat;
             cout<<"Comanda "<<comanda<<endl; // retine comenzile folosite in compiler
 
-            if(butonul_apasat==1 && lockbut==0)
+            if(butonul_apasat==1 )
             {
+                deseneazaPoze();
                 enableimg1=1;
                 enableimg2=0;
 
                 setcolor(WHITE);
-
-                setfillstyle(SOLID_FILL,RED);
-                bar(B[1].D.SS.x, B[1].D.SS.y, B[1].D.DJ.x, B[1].D.DJ.y);
-                setbkcolor(BLACK);
-                outtextxy(B[1].D.SS.x+10,B[1].D.SS.y+15,B[1].text);
-
-                culoareoriginala(2);
             }
 
-            if(butonul_apasat==2 && lockbut==0)
+            if(butonul_apasat==2 )
             {
+                deseneazaPoze();
                 enableimg1=0;
                 enableimg2=1;
 
                 setcolor(WHITE);
-
-                setfillstyle(SOLID_FILL,GREEN);
-                bar(B[2].D.SS.x, B[2].D.SS.y, B[2].D.DJ.x, B[2].D.DJ.y);
-                setbkcolor(BLACK);
-                outtextxy(B[2].D.SS.x+10,B[2].D.SS.y+15,B[2].text);
-
-                culoareoriginala(1);
             }
 
-            if(butonul_apasat==3 && lockbut==0 && (prev1!=0 && prev2!=0)) /// ALG TREBUIE INLOCUIT CU UN VOID START(IMG1, IMG2) !!! PLUS ATENTIE LA CAZUL IN CARE NU AU FOST ALESE IMG INCA (PREV1 SAU PREV2 = 0)
+            if(butonul_apasat==3 && (prev1!=0 && prev2!=0))
             {
-                culoareoriginala(1);
-                culoareoriginala(2);
-
-                setviewport(700,80, 700,1400, 0);
+                //setviewport(700,80, 700,1400, 0);//inainte de schimbarea fe
+                initwindow(1400,700);
+                setviewport(350,50, 1400,700, 0);
                 setcolor(WHITE);
-                lockbut=1;
                 ///---------
-                morph(img[prev1-4],img[prev2-4],imgint[prev1-4],imgint[prev2-4],25);
+                morph(img[prev1-7],img[prev2-7],imgint[prev1-7],imgint[prev2-7],25);
                 ///---------
+                setviewport(0,0,1400,700,0);
                 enableimg1=0;
                 enableimg2=0;
+                deseneazaBack();
+                prev1=0;
+                prev2=0;
             }
 
-            if(butonul_apasat > 3)  //schimbarea culorii butonului imagine selectat si retinerea in prev1 si prev 2
-            {
+            if(butonul_apasat==7){
+                closegraph();
+                initwindow(1400,700);
+                deseneazaMeniul();
+                blocimg();
+            }
 
+            if(butonul_apasat > 7)  //schimbarea culorii butonului imagine selectat si retinerea in prev1 si prev 2
+            {
                 if(enableimg1==1 && butonul_apasat!=prev2)
                 {
                     if(prev1!=0)
@@ -415,7 +441,7 @@ int main()
 
         }
     }
-    while (comanda!=4);
+    while (comanda!=6);
     //getch();
     closegraph();
     return 0;
