@@ -33,7 +33,7 @@ struct buton
     char text[20];
 };
 buton B[20];
-int nrButoane=15;
+int nrButoane=16;
 
 int butonAles()
 {
@@ -52,7 +52,7 @@ int butonAles()
 }
 
 
-void deseneazaMeniul()
+void deseneazaMeniul()      /// -----------MENIUL------------
 {
     readimagefile("bkr.gif",0, 0,1400,700);
     setcolor(WHITE);
@@ -104,7 +104,7 @@ void deseneazaMeniul()
 
 }
 
-void deseneazaBack(){
+void deseneazaBack(){     /// -----------BUTONUL BACK------------
     B[7].D.SS.x=2;
     B[7].D.SS.y=2;
 
@@ -113,9 +113,18 @@ void deseneazaBack(){
     readimagefile("inapoi.gif",B[7].D.SS.x, B[7].D.SS.y,B[7].D.DJ.x,B[7].D.DJ.y);
 }
 
-void blocimg(){
+void deseneazaMBack(){    /// -----------BUTONUL MORPH BACK------------
+    B[16].D.SS.x=1170;
+    B[16].D.SS.y=5;
+
+    B[16].D.DJ.x=1395;
+    B[16].D.DJ.y=65;
+    readimagefile("morphback.gif",1170,5,1395,65);
+}
+
+void blocimg(){  /// ----------BLOCARE BUTOANELOR------------
     int j;
-    for(j=8;j<=15;j++){
+    for(j=8;j<=16;j++){
     B[j].D.SS.x=0;
     B[j].D.SS.y=0;
 
@@ -123,7 +132,6 @@ void blocimg(){
     B[j].D.DJ.y=0;
     }
 }
-
 void blocbut(){
     int j;
     for(j=1;j<=6;j++){
@@ -135,7 +143,7 @@ void blocbut(){
     }
 }//butoanele din meniu puteau fi apasate din meniul cu poze si invers
 
-void deseneazaPoze(){
+void deseneazaPoze(){    /// -----------MENIUL PENTRU ALES IMAGINI------------
     blocbut();
     initwindow(1400,700);
     readimagefile("bkr.gif",0, 0,1400,700);
@@ -156,7 +164,7 @@ void deseneazaPoze(){
     readimagefile("poza1.gif",B[i].D.SS.x+1, B[i].D.SS.y+1,B[i].D.DJ.x-1,B[i].D.DJ.y-1); /// POZAA
 
 
-    for(i=9; i<=nrButoane; i++)
+    for(i=9; i<=15; i++)
     {
         if(i==12) // schimbarea de nivel dupa 4 butoane imagine
         {
@@ -193,7 +201,7 @@ void deseneazaPoze(){
 float img[8][50];
 int imgint[8][50];
 
-void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib, int &coefy, int &lafel)
+void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terlib, int &coefy, int &lafel) /// -----------ECUATIILE FOLOSITE------------
 {
     if(x1==x2&&y1==y2)
     {
@@ -236,7 +244,7 @@ void calculeazaEcuatia(int x1, int y1, int x2, int y2,float &panta, float &terli
 int prev1=0;
 int prev2=0;
 
-void morph(float a[],float b[],int aint[], int bint[],int n)
+void morph(float a[],float b[],int aint[], int bint[],int n)  /// -----------CALCULAREA SI AFISAREA TRECERII DE LA O IMAGINE LA ALTA------------
 {
     int laFel[n]= {0}; ///1=punctul nu se misca 2=pe verticala 3=pe orizontala 4=avem ecuatie cu toti coeficientii
 
@@ -326,19 +334,21 @@ void morph(float a[],float b[],int aint[], int bint[],int n)
         }
         for(int k=0; k<2*n; k++)
             auxint[k]=(int)aux[k];
-        bar(2,2,698,698);
+        //bar(2,2,698,698);
+        clearviewport();
         drawpoly(n,auxint);
         delay(10);
 
 
     }
-    bar(2,2,698,698);
+    //bar(2,2,698,698); --> merge cu clearviewport in loc de bar acum ca am folosit initwindow in program
+    clearviewport();
     //drawpoly(n,bint); -> asa era inainte sa ma bag eu (in loc de if else )
     if(prev2!=15)drawpoly(n,bint); //  cand e nike face cu un pas mai putin gen
        else drawpoly(n,auxint);
 }
 
-int main() /// --------------------------------------------------------------------------------------
+int main()          /// -------------------------------------MAIN-------------------------------------------------
 {
     int enableimg1=0;//pt alegerea img1 dupa selectarea butonului 1
     int enableimg2=0;//pt alegerea img2 dupa selectarea butonului 2
@@ -346,18 +356,21 @@ int main() /// -----------------------------------------------------------------
     initwindow(1400,700);
     deseneazaMeniul();
 
-    for(int i=1; i<=8; i++)
+    /// ---------------------------------------------------------------------
+
+    for(int i=1; i<=8; i++) /// PANA LA 10, 9 SI 10 FIIND IMAGINILE DESENATE
         for(int j=0; j<50; j++)
         {
             fin>>img[i][j];
             imgint[i][j]=img[i][j];
-            //if(i==8)cout<<imgint[i][j]<<" ";
         }
 
     /// ----------------------------------------------------------------------
 
     int comanda=0, butonul_apasat=0;
-    int imag=0; // folosit doar ca prescurtare pt butonul_apasat in cazu 1 si 2
+    int imag=0; // folosit doar ca prescurtare pt butonul_apasat in cazul imaginilor
+    int mback1=0;
+    int mback2=0;
 
     do
     {
@@ -387,7 +400,6 @@ int main() /// -----------------------------------------------------------------
 
             if(butonul_apasat==3 && (prev1!=0 && prev2!=0))
             {
-                //setviewport(700,80, 700,1400, 0);//inainte de schimbarea fe
                 initwindow(1400,700);
                 setviewport(350,50, 1400,700, 0);
                 setcolor(WHITE);
@@ -398,18 +410,38 @@ int main() /// -----------------------------------------------------------------
                 enableimg1=0;
                 enableimg2=0;
                 deseneazaBack();
-                prev1=0;
-                prev2=0;
+                deseneazaMBack();
+
+                mback1=prev1; prev1=0;
+                mback2=prev2; prev2=0;
+            }
+            if(butonul_apasat==16){ // butonul morphback -- merge repetat (mai putin la nike)
+                prev1=mback2;
+                prev2=mback1;
+
+                clearviewport();
+                setviewport(350,50, 1400,700, 0);
+                setcolor(WHITE);
+                ///---------
+                morph(img[prev1-7],img[prev2-7],imgint[prev1-7],imgint[prev2-7],25);
+                ///---------
+                setviewport(0,0,1400,700,0);
+                enableimg1=0;
+                enableimg2=0;
+                deseneazaBack();
+                deseneazaMBack();
+                mback1=prev1; prev1=0;
+                mback2=prev2; prev2=0;
             }
 
-            if(butonul_apasat==7){
+            if(butonul_apasat==7){ // butonul back
                 closegraph();
                 initwindow(1400,700);
                 deseneazaMeniul();
                 blocimg();
             }
 
-            if(butonul_apasat > 7)  //schimbarea culorii butonului imagine selectat si retinerea in prev1 si prev 2
+            if(butonul_apasat > 7 && butonul_apasat!=16)  //butoanele imagine
             {
                 if(enableimg1==1 && butonul_apasat!=prev2)
                 {
@@ -435,8 +467,22 @@ int main() /// -----------------------------------------------------------------
                     imag=butonul_apasat;
                     rectangle(B[imag].D.SS.x, B[imag].D.SS.y, B[imag].D.DJ.x, B[imag].D.DJ.y);
                     prev2=imag;
-                }//prev2 ramane valoarea imaginiei 2 aleasa --. de folosir in functie start(prev1, prev2)
+                }//prev2 ramane valoarea imaginiei 2 aleasa
 
+            }
+
+            if(butonul_apasat==4){
+                initwindow(700,620);
+                //void deseneazaImagineaz(1) (cu un for de la 1 la 25 pentru a marca punctele (salvate intr un vector)si afisarea imaginii desenate)
+                //dupa ce creezi vectorul il implementez eu in start, tre sa modific cv la butoane
+                ///DACA POTI, MAI PUNE 2 RANDURI DE 0,0,0,0,....,0 IN INPUT,TXT CARE SA FIE SALVATE IN IMG[9] SI IMG[10] SI MODIFICATE IN VOID DESENEAZAIMAGINEA... AR FI MAI USOR ASA
+                deseneazaBack();
+            }
+
+            if(butonul_apasat==5){
+                initwindow(700,620);
+                //deseneazaImaginea(2)
+                deseneazaBack();
             }
 
         }
