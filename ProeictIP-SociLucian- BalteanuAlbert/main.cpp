@@ -52,7 +52,6 @@ int butonAles()
     return 0;
 }
 
-
 void deseneazaMeniul()      /// -----------MENIUL------------
 {
     readimagefile("bkr.gif",0, 0,1400,700);
@@ -101,8 +100,11 @@ void deseneazaMeniul()      /// -----------MENIUL------------
     readimagefile("deseneaza2.gif",B[5].D.SS.x, B[5].D.SS.y,B[5].D.DJ.x,B[5].D.DJ.y);
     readimagefile("iesire.gif",B[6].D.SS.x, B[6].D.SS.y,B[6].D.DJ.x,B[6].D.DJ.y);
 
+    for (i=1; i<=6; i++){
+    setcolor(BLACK);
+    rectangle(B[i].D.SS.x-1, B[i].D.SS.y-1,B[i].D.DJ.x+1,B[i].D.DJ.y+1);
+    }
     setcolor(WHITE);
-
 }
 
 void deseneazaBack()      /// -----------BUTONUL BACK------------
@@ -113,6 +115,8 @@ void deseneazaBack()      /// -----------BUTONUL BACK------------
     B[7].D.DJ.x=202;
     B[7].D.DJ.y=62;
     readimagefile("inapoi.gif",B[7].D.SS.x, B[7].D.SS.y,B[7].D.DJ.x,B[7].D.DJ.y);
+    setcolor(BLACK);
+    rectangle(B[7].D.SS.x-1, B[7].D.SS.y-1,B[7].D.DJ.x+1,B[7].D.DJ.y+1);
 }
 
 void deseneazaMBack()     /// -----------BUTONUL MORPH BACK------------
@@ -123,12 +127,14 @@ void deseneazaMBack()     /// -----------BUTONUL MORPH BACK------------
     B[16].D.DJ.x=1395;
     B[16].D.DJ.y=65;
     readimagefile("morphback.gif",1170,5,1395,65);
+    setcolor(BLACK);
+    rectangle(B[16].D.SS.x-1, B[16].D.SS.y-1,B[16].D.DJ.x+1,B[16].D.DJ.y+1);
 }
 
 void blocimg()   /// ----------BLOCARE BUTOANELOR------------
 {
     int j;
-    for(j=8; j<=16; j++)
+    for(j=7; j<=16; j++)
     {
         B[j].D.SS.x=0;
         B[j].D.SS.y=0;
@@ -393,6 +399,27 @@ void deseneazaImaginea(int a[],float floata[]) ///------------------------------
   //  getch();
 }
 
+void butonHovered() /// -----------------------trecerea mousee-ului peste butoane----------------
+{
+    int i;
+    punct h;
+    h.x=mousex();
+    h.y=mousey();
+
+    for (i=1; i<=nrButoane; i++){
+            if(apartine(h,B[i].D)){
+                setcolor(WHITE);
+                rectangle(B[i].D.SS.x-1, B[i].D.SS.y-1,B[i].D.DJ.x+1,B[i].D.DJ.y+1);
+            }
+                else {
+                    setcolor(BLACK);
+                    rectangle(B[i].D.SS.x-1, B[i].D.SS.y-1,B[i].D.DJ.x+1,B[i].D.DJ.y+1);
+                }
+
+    }
+}
+
+
 int main()          /// -------------------------------------MAIN-------------------------------------------------
 {
     int enableimg1=0;//pt alegerea img1 dupa selectarea butonului 1
@@ -419,11 +446,12 @@ int main()          /// -------------------------------------MAIN---------------
 
     do
     {
+        butonHovered();
         butonul_apasat=butonAles();
         if (butonul_apasat!=0)
         {
             comanda=butonul_apasat;
-            cout<<"Comanda "<<comanda<<endl; // retine comenzile folosite in compiler
+            //cout<<"Comanda "<<comanda<<endl; // retine comenzile folosite in compiler
 
             if(butonul_apasat==1 )
             {
@@ -447,6 +475,8 @@ int main()          /// -------------------------------------MAIN---------------
             {
                 initwindow(1400,700);
                 setviewport(350,50, 1400,700, 0);
+
+                blocbut();
                 setcolor(WHITE);
                 ///---------
                 morph(img[prev1-7],img[prev2-7],imgint[prev1-7],imgint[prev2-7],25);
@@ -525,6 +555,7 @@ int main()          /// -------------------------------------MAIN---------------
             if(butonul_apasat==4)
             {
                 initwindow(700,620);
+                blocbut();
                 deseneazaImaginea(imgint[9],img[9]);
                 //void deseneazaImaginea(1) (cu un for de la 1 la 25 pentru a marca punctele (salvate intr un vector)si afisarea imaginii desenate)
                 //dupa ce creezi vectorul il implementez eu in start, tre sa modific cv la butoane
@@ -537,6 +568,7 @@ int main()          /// -------------------------------------MAIN---------------
             if(butonul_apasat==5)
             {
                 initwindow(700,620);
+                blocbut();
                 deseneazaImaginea(imgint[10],img[10]);
                 //deseneazaImaginea(2)
                 deseneazaBack();
