@@ -1,50 +1,300 @@
-coefy 1 panta -1.08989 terlib 57.0562
- dis1:2.67
-coefy 1 panta 0.527094 terlib -597.833
- dis2:2.03
-coefy 1 panta -0.842466 terlib -222.973
- dis3:1.46
-coefy 1 panta 0.0963303 terlib -390.45
- dis4:2.18
-coefy 1 panta -0.248677 terlib -278.159
- dis5:1.89
-coefy 1 panta -0.417647 terlib -158.947
- dis6:1.7
-coefy 1 panta -0.402878 terlib -139.741
- dis7:1.39
-coefy 1 panta 0.951456 terlib -567.136
- dis8:1.03
-coefy 1 panta 1.91837 terlib -913.306
- dis9:0.49
-coefy 1 panta 0.211111 terlib -253.756
- dis10:0.9
-coefy 1 panta 0.0497238 terlib -178.337
- dis11:1.81
-coefy 1 panta -0.0302013 terlib -135.983
- dis12:2.98
-coefy 1 panta -0.161644 terlib -67.0466
- dis13:3.65
-coefy 1 panta -0.523077 terlib 55.2
- dis14:3.25
-coefy 1 panta -0.97191 terlib 232.219
- dis15:1.78
-coefy 1 panta -1.69892 terlib 534.323
- dis16:0.93
-coefy 1 panta 11.4545 terlib -5261.09
- dis17:0.11
-coefy 1 panta -1.58824 terlib 407.647
- dis18:0.85
-coefy 1 panta -0.831776 terlib 132.047
- dis19:2.14
-coefy 1 panta -1.20909 terlib 244.709
- dis20:1.1
-coefy 1 panta 3.04082 terlib -1686.88
- dis21:0.49
-coefy 1 panta 13.6875 terlib -6528.12
- dis22:0.16
-coefy 1 panta -0.77381 terlib -84.9643
- dis23:2.52
-coefy 1 panta 1.01365 terlib -663.904
- dis24:2.93
-coefy 1 panta -1.08989 terlib 57.0562
- dis25:2.67
+coefy 1 panta 1.46154 terlib -409.923
+ dis1:0.39
+coefy 1 panta 0.659091 terlib -294.227
+ dis2:0.44
+coefy 1 panta 0.206897 terlib -261.69
+ dis3:2.03
+coefy 1 panta 0.366812 terlib -376.769
+ dis4:2.29
+coefy 1 panta 0.139013 terlib -389.112
+ dis5:2.23
+coefy 1 panta 1.24561 terlib -701.737
+ dis6:0.57
+coefy 1 panta 5.58974 terlib -1779.18
+ dis7:0.39
+coefy 1 panta 13.3636 terlib -3809.18
+ dis8:0.22
+coefy 1 panta -1.06875 terlib -186.069
+ dis9:1.6
+coefy 1 panta -0.43295 terlib -362.797
+ dis10:2.61
+coefy 1 panta -0.443686 terlib -293.14
+ dis11:2.93
+coefy 1 panta -0.577273 terlib -184.232
+ dis12:2.2
+coefy 1 panta -0.558974 terlib -125.154
+ dis13:1.95
+coefy 1 panta -0.641694 terlib -73.4723
+ dis14:3.07
+coefy 1 panta -1.11913 terlib 56.1769
+ dis15:2.77
+coefy 1 panta -2.22222 terlib 424.333
+ dis16:1.8
+coefy 1 panta -5.54667 terlib 1801.68
+ dis17:0.75
+coefy 1 panta -1.81385 terlib 313.909
+ dis18:2.31
+coefy 1 panta -1.02402 terlib 52.5075
+ dis19:3.33
+coefy 1 panta -0.648148 terlib -62.2963
+ dis20:3.24
+coefy 1 panta -0.245161 terlib -185.548
+ dis21:3.1
+coefy 1 panta 0.0150943 terlib -219.26
+ dis22:2.65
+coefy 1 panta 0.217213 terlib -244.176
+ dis23:2.44
+coefy 1 panta 0.240283 terlib -210.212
+ dis24:2.83
+coefy 1 panta 1.46154 terlib -409.923
+ dis25:0.39
+coefy 1 panta 0.49359 terlib -371.724
+ dis1:1.56
+coefy 1 panta -0.162791 terlib -49.907
+ dis2:1.29
+coefy 1 panta -0.170068 terlib -71.7007
+ dis3:1.47
+coefy 1 panta 0.651786 terlib -324.295
+ dis4:1.12
+coefy 1 panta 9.31579 terlib -2815.47
+ dis5:0.19
+coefy 1 panta 7.90909 terlib -2971.55
+ dis6:0.22
+coefy 1 panta 0.978495 terlib -643.032
+ dis7:0.93
+coefy 1 panta 0.467337 terlib -495.307
+ dis8:1.99
+coefy 1 panta 1.67742 terlib -1029.32
+ dis9:1.86
+coefy 1 panta -10.4333 terlib 4255.7
+ dis10:0.3
+coefy 1 panta -0.5 terlib -26.5
+ dis11:0.26
+coefy 1 panta -1.26 terlib 220.42
+ dis12:0.5
+coefy 1 panta -0.588652 terlib -18.3262
+ dis13:1.41
+coefy 1 panta -1.84828 terlib 455.11
+ dis14:1.45
+coefy 1 panta -3.18919 terlib 1038.14
+ dis15:1.11
+coefy 1 panta 6.61111 terlib -3271.83
+ dis16:0.54
+coefy 1 panta 3.79688 terlib -2028.3
+ dis17:0.64
+coefy 1 panta 2.0202 terlib -1143.99
+ dis18:0.99
+coefy 1 panta 1.19118 terlib -774.956
+ dis19:2.04
+coefy 1 panta 1.83505 terlib -1023.31
+ dis20:1.94
+coefy 1 panta 1.5885 terlib -843.819
+ dis21:2.26
+coefy 1 panta 1.26432 terlib -706.714
+ dis22:2.27
+coefy 1 panta 0.654709 terlib -440.525
+ dis23:2.23
+coefy 1 panta 0.924051 terlib -560.962
+ dis24:1.58
+coefy 1 panta 0.49359 terlib -371.724
+ dis25:1.56
+coefy 1 panta 0.49359 terlib -371.724
+ dis1:1.56
+coefy 1 panta -0.162791 terlib -49.907
+ dis2:1.29
+coefy 1 panta -0.170068 terlib -71.7007
+ dis3:1.47
+coefy 1 panta 0.651786 terlib -324.295
+ dis4:1.12
+coefy 1 panta 9.31579 terlib -2815.47
+ dis5:0.19
+coefy 1 panta 7.90909 terlib -2971.55
+ dis6:0.22
+coefy 1 panta 0.978495 terlib -643.032
+ dis7:0.93
+coefy 1 panta 0.467337 terlib -495.307
+ dis8:1.99
+coefy 1 panta 1.67742 terlib -1029.32
+ dis9:1.86
+coefy 1 panta -10.4333 terlib 4255.7
+ dis10:0.3
+coefy 1 panta -0.5 terlib -26.5
+ dis11:0.26
+coefy 1 panta -1.26 terlib 220.42
+ dis12:0.5
+coefy 1 panta -0.588652 terlib -18.3262
+ dis13:1.41
+coefy 1 panta -1.84828 terlib 455.11
+ dis14:1.45
+coefy 1 panta -3.18919 terlib 1038.14
+ dis15:1.11
+coefy 1 panta 6.61111 terlib -3271.83
+ dis16:0.54
+coefy 1 panta 3.79688 terlib -2028.3
+ dis17:0.64
+coefy 1 panta 2.0202 terlib -1143.99
+ dis18:0.99
+coefy 1 panta 1.19118 terlib -774.956
+ dis19:2.04
+coefy 1 panta 1.83505 terlib -1023.31
+ dis20:1.94
+coefy 1 panta 1.5885 terlib -843.819
+ dis21:2.26
+coefy 1 panta 1.26432 terlib -706.714
+ dis22:2.27
+coefy 1 panta 0.654709 terlib -440.525
+ dis23:2.23
+coefy 1 panta 0.924051 terlib -560.962
+ dis24:1.58
+coefy 1 panta 0.49359 terlib -371.724
+ dis25:1.56
+coefy 1 panta 0.49359 terlib -371.724
+ dis1:1.56
+coefy 1 panta -0.162791 terlib -49.907
+ dis2:1.29
+coefy 1 panta -0.170068 terlib -71.7007
+ dis3:1.47
+coefy 1 panta 0.651786 terlib -324.295
+ dis4:1.12
+coefy 1 panta 9.31579 terlib -2815.47
+ dis5:0.19
+coefy 1 panta 7.90909 terlib -2971.55
+ dis6:0.22
+coefy 1 panta 0.978495 terlib -643.032
+ dis7:0.93
+coefy 1 panta 0.467337 terlib -495.307
+ dis8:1.99
+coefy 1 panta 1.67742 terlib -1029.32
+ dis9:1.86
+coefy 1 panta -10.4333 terlib 4255.7
+ dis10:0.3
+coefy 1 panta -0.5 terlib -26.5
+ dis11:0.26
+coefy 1 panta -1.26 terlib 220.42
+ dis12:0.5
+coefy 1 panta -0.588652 terlib -18.3262
+ dis13:1.41
+coefy 1 panta -1.84828 terlib 455.11
+ dis14:1.45
+coefy 1 panta -3.18919 terlib 1038.14
+ dis15:1.11
+coefy 1 panta 6.61111 terlib -3271.83
+ dis16:0.54
+coefy 1 panta 3.79688 terlib -2028.3
+ dis17:0.64
+coefy 1 panta 2.0202 terlib -1143.99
+ dis18:0.99
+coefy 1 panta 1.19118 terlib -774.956
+ dis19:2.04
+coefy 1 panta 1.83505 terlib -1023.31
+ dis20:1.94
+coefy 1 panta 1.5885 terlib -843.819
+ dis21:2.26
+coefy 1 panta 1.26432 terlib -706.714
+ dis22:2.27
+coefy 1 panta 0.654709 terlib -440.525
+ dis23:2.23
+coefy 1 panta 0.924051 terlib -560.962
+ dis24:1.58
+coefy 1 panta 0.49359 terlib -371.724
+ dis25:1.56
+coefy 1 panta 0.49359 terlib -371.724
+ dis1:1.56
+coefy 1 panta -0.162791 terlib -49.907
+ dis2:1.29
+coefy 1 panta -0.170068 terlib -71.7007
+ dis3:1.47
+coefy 1 panta 0.651786 terlib -324.295
+ dis4:1.12
+coefy 1 panta 9.31579 terlib -2815.47
+ dis5:0.19
+coefy 1 panta 7.90909 terlib -2971.55
+ dis6:0.22
+coefy 1 panta 0.978495 terlib -643.032
+ dis7:0.93
+coefy 1 panta 0.467337 terlib -495.307
+ dis8:1.99
+coefy 1 panta 1.67742 terlib -1029.32
+ dis9:1.86
+coefy 1 panta -10.4333 terlib 4255.7
+ dis10:0.3
+coefy 1 panta -0.5 terlib -26.5
+ dis11:0.26
+coefy 1 panta -1.26 terlib 220.42
+ dis12:0.5
+coefy 1 panta -0.588652 terlib -18.3262
+ dis13:1.41
+coefy 1 panta -1.84828 terlib 455.11
+ dis14:1.45
+coefy 1 panta -3.18919 terlib 1038.14
+ dis15:1.11
+coefy 1 panta 6.61111 terlib -3271.83
+ dis16:0.54
+coefy 1 panta 3.79688 terlib -2028.3
+ dis17:0.64
+coefy 1 panta 2.0202 terlib -1143.99
+ dis18:0.99
+coefy 1 panta 1.19118 terlib -774.956
+ dis19:2.04
+coefy 1 panta 1.83505 terlib -1023.31
+ dis20:1.94
+coefy 1 panta 1.5885 terlib -843.819
+ dis21:2.26
+coefy 1 panta 1.26432 terlib -706.714
+ dis22:2.27
+coefy 1 panta 0.654709 terlib -440.525
+ dis23:2.23
+coefy 1 panta 0.924051 terlib -560.962
+ dis24:1.58
+coefy 1 panta 0.49359 terlib -371.724
+ dis25:1.56
+coefy 1 panta 0.49359 terlib -371.724
+ dis1:1.56
+coefy 1 panta -0.162791 terlib -49.907
+ dis2:1.29
+coefy 1 panta -0.170068 terlib -71.7007
+ dis3:1.47
+coefy 1 panta 0.651786 terlib -324.295
+ dis4:1.12
+coefy 1 panta 9.31579 terlib -2815.47
+ dis5:0.19
+coefy 1 panta 7.90909 terlib -2971.55
+ dis6:0.22
+coefy 1 panta 0.978495 terlib -643.032
+ dis7:0.93
+coefy 1 panta 0.467337 terlib -495.307
+ dis8:1.99
+coefy 1 panta 1.67742 terlib -1029.32
+ dis9:1.86
+coefy 1 panta -10.4333 terlib 4255.7
+ dis10:0.3
+coefy 1 panta -0.5 terlib -26.5
+ dis11:0.26
+coefy 1 panta -1.26 terlib 220.42
+ dis12:0.5
+coefy 1 panta -0.588652 terlib -18.3262
+ dis13:1.41
+coefy 1 panta -1.84828 terlib 455.11
+ dis14:1.45
+coefy 1 panta -3.18919 terlib 1038.14
+ dis15:1.11
+coefy 1 panta 6.61111 terlib -3271.83
+ dis16:0.54
+coefy 1 panta 3.79688 terlib -2028.3
+ dis17:0.64
+coefy 1 panta 2.0202 terlib -1143.99
+ dis18:0.99
+coefy 1 panta 1.19118 terlib -774.956
+ dis19:2.04
+coefy 1 panta 1.83505 terlib -1023.31
+ dis20:1.94
+coefy 1 panta 1.5885 terlib -843.819
+ dis21:2.26
+coefy 1 panta 1.26432 terlib -706.714
+ dis22:2.27
+coefy 1 panta 0.654709 terlib -440.525
+ dis23:2.23
+coefy 1 panta 0.924051 terlib -560.962
+ dis24:1.58
+coefy 1 panta 0.49359 terlib -371.724
+ dis25:1.56
